@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mess Management</title>
+	<!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Exact login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+  
+	<link href="css1/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css1/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //Custom Theme files -->
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<!-- web font --> 
+	
+	<!--w3-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
+<style>
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+</style>
+	
+</head>
+<body>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+	<a href="main page.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="menu.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Menu for the week</a>
+    <a href="admin_login.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Admin login</a>
+	<a href="student_signup.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Student Signup</a>
+    <a href="student_login.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Student login</a>
+    <a href="gallery.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Gallery</a>
+	</div>
+	<!-- main -->
+	<div class="main">
+		<h1></h1>
+		<div class="main-w3lsrow">
+			<!-- login form -->
+			<div class="login-form login-form-left"> 
+				<div class="agile-row">
+					<div class="head">
+						<h2>Student SignUp</h2>
+						<span class="fa fa-lock"></span>
+					</div>					
+					<form>
+						<p>Email</p>
+						<input id="email" type="text" name="" placeholder="Enter Email id">
+						<input id="password" type="password" name="" placeholder="Enter Password">
+						<input id="cpassword" type="password" name="" placeholder="Enter password for confirm">
+						<button id="btn-signup" type="button" class="btn btn-danger" onclick=dofunc()>Signup</button><br> <br>
+						<a href="recover.html">Lost your password?</a><br>
+						<a href="student_login.html">Don't have an account?</a><br>
+						
+						
+					</form> 
+			</div>  
+		</div>
+		
+		<div class="copyright">
+			<p>cmsdfghjkldfgh<sup>&reg;</sup></p>
+			<!--<p> © 2018 Exact Login Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>-->
+		</div>
+		<!-- //copyright --> 
+	</div>	
+	<!-- //main -->
+	
+	<script src=js/index.js></script>
+	<script>
+		
+dofunc = () => {
+
+		firebase.auth().onAuthStateChanged(function(user)
+		{
+			var password= $("#password").val();
+			var cpassword= $("#cpassword").val();
+			if(user && password==cpassword)
+			{
+				// window.alert("Sign up success!!");
+				window.location="main page.html";
+			}
+
+		});
+	}
+	</script>
+</body>
+</html>

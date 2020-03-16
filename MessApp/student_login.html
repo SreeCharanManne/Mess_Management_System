@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SASTRA Mess Student Login</title>
+	<!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Exact login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+   
+	<!-- //Meta-Tags -->
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+	<!-- Custom Theme files -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="css1/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css1/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
+	
+		<!--w3-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
+
+	
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+	<a href="main page.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="menu.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Menu for the week</a>
+    <a href="admin_login.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Admin login</a>
+	<a href="student_signup.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Student Signup</a>
+    <a href="student_login.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Student login</a>
+    <a href="gallery.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Gallery</a>
+	</div>
+	<!-- main -->
+	<body>
+	<div class="loginbox">
+		<img src="avatar.png" class="avatar">
+			<h1>Login Here</h1>
+			<div class= "form group container-login100-form-btn">
+				<p>Email id</p>
+				<input id="email" type="text" name="" placeholder="Enter your mail">
+				<p>Password</p>
+				<input id="password" type="password" name="" placeholder="Enter Password">
+				<button id="btn-login" type="button" onclick=dofunc() >Login
+					<i class="zmdi zmdi-arrow-right"></i>
+				</button><br> <br>
+				<a href="recover.html">Lost your password?</a><br>
+				<a href="signup.html">Don't have an account?</a><br>
+				
+			</div>
+			
+		</div>
+	
+		
+		<div class="copyright">
+			<!--<p> © 2018 Exact Login Form. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>-->
+		</div>
+		<!-- //copyright --> 
+	</div>	
+	<!-- //main -->
+	<script src=js/index.js></script>
+	<script>
+		
+dofunc = () => {
+		firebase.auth().onAuthStateChanged(function(user)
+		{
+			var password= document.getElementById("password").value;
+			var email=  document.getElementById("email").value;
+			if(user) 
+			{
+				if(email!=null && password!=null)
+				window.location="menu.html";
+			}
+
+		});
+	}
+	</script>
+</body>
+
+</html>
