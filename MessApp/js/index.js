@@ -1,6 +1,3 @@
-
-
-  // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyA9_2chtFFlaevTN8ej8oOT1P__UkT5M0s",
     authDomain: "swmess.firebaseapp.com",
@@ -16,31 +13,58 @@
 
   firebase.auth.Auth.Persistence.LOCAL;
 
+  
+  
+	const auth = firebase.auth();
+	
 
-$("#btn-login").click(function()
-{
-  var email=$("#email").val();
-  var password= $("#password").val();
-
-  if(email!="" && password!="")
-  {
-    var result=firebase.auth().signInWithEmailAndPassword(email,password);
-    result.catch(function(error){
-
-        var errorCode=error.code;
-        var errorMessage=error.message;
-        console.log(errorCode);
-        console.log(errorMessage);
-        window.alert("Message :"+ errorMessage);
-    });
-}
-        else
-        {
-      
-          window.alert("Please enter your credentials properly!!");
-        }
+	
+	
+	function signIn(){
+		
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(function() {
+        console.log("hello");
+        alert('User signed in!');
+        window.location="menu.html";
+      }) 
+      .catch(function(error) {
         
-    });
+          alert('Please check your credentials!!')
+          
+      });
+	}
+	
+	
+	function signOut() {
+    firebase.auth().signOut().then(function() {
+      alertMessage('User signed out!');
+    }).catch(displayError);
+  }
+	
+	
+	
+	auth.onAuthStateChanged(function(user){
+		
+		if(user!=null){
+			
+      window.location="main page.html";
+			
+		}else{
+			
+			alert("No Active User");
+			//no user is signed in
+		}
+		
+		
+		
+	 });
+	
+
+
+
   
   
 
@@ -112,14 +136,54 @@ $("#btn-login").click(function()
   var email=$("#email").val();
   var password= $("#password").val();
 
-  if(email!="" && password!="")
-  {
+ 
     firebase.auth().signOut();
         
-    }
+    
   });
 
+// $("#btn-login").click(function()
+// {
+//   var email=document.getElementById("email").value;
+//   var password= document.getElementById("password").value;
+
+  
+//   if(email!="" && password!="") 
+//   {
+//     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+//       // Handle Errors here.
+//       var errorCode = error.code;
+//       var errorMessage = error.message;
+//       console.log(errorCode);
+//           console.log(errorMessage);
+//           window.alert("Message :"+ errorMessage);
+//       // ...
+//     }); 
+//   }
+  
+//         else
+//         {
+      
+//           window.alert("Please enter your credentials properly!!");
+//         }
+        
+//     });
 
 
+//   dofunc = () => {
+// 		firebase.auth().onAuthStateChanged(function(user)
+// 		{
+// 			var password= document.getElementById("password").value;
+//       var email=  document.getElementById("email").value;
+
+// 			if(user) 
+// 			{
+// 				if(email!=null && password!=null)
+// 				window.location="menu.html";
+// 			}
+
+// 		});
+// 	}
+	
 
 
