@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FEE CALCULATION</title>
+<link rel="icon" href="sastra.png" type="image/png" sizes="16x16">
+		<!--w3-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+<style type="text/css">
+body {   
+	background: url(images1/bg3.jpg)repeat 0px 0px;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+	font-family: 'Raleway', sans-serif;
+} 
+    .form-style-5{
+        max-width: 1000px;
+        padding: 10px 20px;
+        background: #f4f7f8;
+        margin: 10px auto;
+        padding: 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    .form-style-5 fieldset{
+        border: none;
+    }
+    .form-style-5 legend {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+    .form-style-5 label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    .form-style-5 input[type="text"],
+    .form-style-5 input[type="date"],
+    .form-style-5 input[type="datetime"],
+    .form-style-5 input[type="email"],
+    .form-style-5 input[type="number"],
+    .form-style-5 input[type="search"],
+    .form-style-5 input[type="time"],
+    .form-style-5 input[type="url"],
+    .form-style-5 textarea,
+    .form-style-5 select {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        background: rgba(255,255,255,.1);
+        border: none;
+        border-radius: 4px;
+        font-size: 15px;
+        margin: 0;
+        outline: 0;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box; 
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box; 
+        background-color: #e8eeef;
+        color:#8a97a0;
+        -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+        margin-bottom: 30px;
+    }
+    .form-style-5 input[type="text"]:focus,
+    .form-style-5 input[type="date"]:focus,
+    .form-style-5 input[type="datetime"]:focus,
+    .form-style-5 input[type="email"]:focus,
+    .form-style-5 input[type="number"]:focus,
+    .form-style-5 input[type="search"]:focus,
+    .form-style-5 input[type="time"]:focus,
+    .form-style-5 input[type="url"]:focus,
+    .form-style-5 textarea:focus,
+    .form-style-5 select:focus{
+        background: #d2d9dd;
+    }
+    .form-style-4{
+        max-width: 500px;
+        padding: 10px 20px;
+        background: blue;
+        margin: 10px auto;
+        padding: 20px;
+        background: #f4f7f8;
+        border-radius: 80px;
+        font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    .form-style-5 select{
+        -webkit-appearance: menulist-button;
+        height:35px;
+    }
+    .form-style-5 .number {
+        background: blue;
+        color: #fff;
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        font-size: 0.8em;
+        margin-right: 4px;
+        line-height: 30px;
+        text-align: center;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+        border-radius: 15px 15px 15px 0px;
+    }
+    
+    .form-style-5 input[type="submit"],
+    .form-style-5 input[type="button"]
+    {
+        
+        
+        padding: 10px 10px 10px 10px;
+        color: #FFF;
+        margin: 0 auto;
+        background: blue;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        margin:auto;
+        width: 20%;
+        border: 1px solid blue;
+        border-width: 1px 1px 3px;
+        margin-bottom: 10px;
+    }
+    .form-style-5 input[type="submit"]:hover,
+    .form-style-5 input[type="button"]:hover
+    {
+        background: #1abc9c;
+    }
+    .center {
+        text-align: center;
+  margin: auto;
+  width: 20%;
+  padding: 1px;
+}
+.col{
+    color:black;
+}
+    </style></head>
+    <body>
+        <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+                <a href="material issue record.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">MATERIAL ISSUE RECORD</a>
+                <a href="daily food cost.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">DAILY FOOD COST</a>
+                <a href="main page.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">LOGOUT</a>
+            </div><br>
+           
+            
+<div class="form-style-5">
+  <div id="myForm">
+    <h2 class="col"><u>FEE CALCULATION</u></h2>
+    <form>
+           <div class="form-style-5">
+           <label>Student Name</label>
+           <input id="name" class="form-control" type="text" required/>
+           </div>
+
+        
+        <div class="form-style-5">
+           <label>Student Regno</label>
+           <input id="date" class="form-control" type="number" required/>
+           
+        </div>
+        <div class="form-style-5">
+           <label>Student Food cost for special mess</label>
+           <input id="place" class="form-control" type="number" required/>
+       
+        </div>
+        <div class="form-style-5">
+           <label>Cost per day of dailymess</label>
+           <input id="cost" class="form-control" type="number" required/>
+           
+        </div>
+           <div class="form-style-5">
+           <label>Breakage fees</label>
+           <input id="cost" class="form-control" type="number" required/>
+        </div>
+ 
+
+        <button id="checka" type="submit" class="form-style-5">Submit choice</button>
+
+    </form>
+  </div>
+</div>
+    <script src="js/index.js"></script>
+    <script>
+        document.getElementById("checka").onclick = function() {
+  let allAreFilled = true;
+  document.getElementById("myForm").querySelectorAll("[required]").forEach(function(i) {
+    if (!allAreFilled) return;
+    if (!i.value) allAreFilled = false;
+    if (i.type === "radio") {
+      let radioValueCheck = false;
+      document.getElementById("myForm").querySelectorAll(`[name=${i.name}]`).forEach(function(r) {
+        if (r.checked) radioValueCheck = true;
+      })
+      allAreFilled = radioValueCheck;
+      console.log("hey man");
+    }
+  })
+  if (!allAreFilled) {
+    alert('Fill all the fields');}
+  else{
+      writemir();
+    }
+  
+};
+    </script>
+</body>
+</html>

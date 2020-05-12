@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<title>Special menu</title>
+<link rel="icon" href="sastra.png" type="image/png" sizes="16x16">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--w3-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+    background-image: url('hostel.jpg');
+    min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+    background-image: url("hostel.jpg");
+    min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+    background-image: url("hostel.jpg");
+    min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+}
+
+table {
+    width:90%;
+}
+table, th, td {
+    border: 2.5px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+</style>
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+	 <a href="student account.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Mark your attendance</a>
+    <a href="rating.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Rate today's meal</a>
+    <a href="feedback.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Feedback</a>
+    <a href="splmenu.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Special Menu</a>
+	<a href="main page.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Logout</a>
+  </div>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">SPECIAL MENU </span>
+  </div>
+</div>
+
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h1 align="center">Special Mess-Menu</h1>
+<table border="5.5" width="1000px" cellpadding="15px" align ="center">
+
+  <tr>
+    <th>ITEMS</th>
+    <th>QUANTITY</th>
+    <th>COST</th>
+    <tr>
+        <td>Gobi Manchurian Rice</td>
+        <td>300gm</td>
+        <td>Rs 50/-</td>
+    </tr>
+    <tr>
+        <td>Gobi 65 Rice</td>
+        <td>300gm</td>
+        <td>Rs 50/-</td>
+    </tr>
+    <tr>
+        <td>Panner Rice</td>
+        <td>300gm</td>
+        <td>Rs 55/-</td>
+    </tr>
+    <tr>
+        <td>Butter Naun</td>
+        <td>1 piece</td>
+        <td>Rs 24/-</td>
+    </tr>
+    <tr>
+        <td>Veg Fried Rice</td>
+        <td>300gm</td>
+        <td>Rs 50/-</td>
+    </tr>
+    <tr>
+        <td>Panner 65</td>
+        <td>300gm</td>
+        <td>Rs 40/-</td>
+    </tr>
+    <tr>
+        <td>Masala Dosa</td>
+        <td>1 piece</td>
+        <td>Rs 45/-</td>
+    </tr>
+    <tr>
+        <td>Onion Dosa</td>
+        <td>1 piece</td>
+        <td>Rs 50/-</td>
+    </tr>
+    <tr>
+        <td>Sambar Idly</td>
+        <td>2 pieces</td>
+        <td>Rs 35/-</td>
+    </tr>
+    <tr>
+        <td>Jalebi</td>
+        <td>4 pieces</td>
+        <td>Rs 30/-</td>
+    </tr>
+    <tr>
+        <td>MilkShake</td>
+        <td>100ml</td>
+        <td>Rs 50/-</td>
+    </tr>
+
+ 
+  </tr>
+  
+</table>
+
+    <!-- Hide this text on small devices -->
+    <div class="w3-col m6 w3-hide-small w3-padding-large">
+    </div>
+  </div>
+
+<!-- Second Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+  </div>
+</div>
+
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide"></span>
+  </div>
+</div>
+
+</body>
+</html>
