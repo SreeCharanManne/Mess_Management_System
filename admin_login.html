@@ -20,11 +20,13 @@
 body,h1 {font-family: "Montserrat", sans-serif}
 img {margin-bottom: -7px}
 .w3-row-padding img {margin-bottom: 12px}
+
 </style>
 	
 </head>
 <body>
 <div class="w3-top">
+
   <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
 	<a href="https://sastra.edu/" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
@@ -46,9 +48,10 @@ img {margin-bottom: -7px}
 					<div class="clear"></div>
 					<div class="login-agileits-top"> 	
 						<form action="material issue record.html" method="post"> 
-							<input type="text" class="name" name="username" Placeholder="Username" required=""/>
-							<input type="password" class="password" name="Password" Placeholder="Password" required=""/>
-							<input type="submit" value="Login Now"> 
+							<input id="email" type="text" class="name" name="username" Placeholder="Username" required=""/>
+							<input id="password" type="password" class="password" name="Password" Placeholder="Password" required=""/>
+							<!-- <input type="submit" value="Login Now">  -->
+							<button id="btn-adm-login" type="button" onclick=signInadmin()>Login</button>
 						</form> 	
 					</div> 
 					<div class="login-agileits-bottom"> 
@@ -61,5 +64,8 @@ img {margin-bottom: -7px}
 		<div class="copyright">		
 		</div>
 	</div>	
+	<script src="js/index.js"></script>
 </body>
+
+
 </html>

@@ -25,8 +25,101 @@
           alert('Please check your credentials!!')
           
       });
+  }
+  
+  function signInadmin(){
+		
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(function() {
+        alert('User signed in!');
+        window.location="material issue record.html";
+      }) 
+      .catch(function(error) {
+        
+          alert('Please check your credentials!!')
+          
+      });
 	}
-	
+  
+  function getdata(){
+    var user=document.getElementById("name").value;
+    firebase.database().ref('User/Ratings/'+user).once('value').then(function(snapshort){
+      if(snapshort.val()==null)console.log(snapshort.val());
+      var useradditionalinfo=snapshort.val().additionalinfo;
+      var userday=snapshort.val().day;
+      var usermeal=snapshort.val().meal;
+      var userrating=snapshort.val().rating;
+      var userregno=snapshort.val().regno;
+
+      document.getElementById("newadditionalinfo").innerHTML=useradditionalinfo;
+      document.getElementById("newday").innerHTML=userday;
+      document.getElementById("newmeal").innerHTML=usermeal;
+      document.getElementById("newrating").innerHTML=userrating;
+      document.getElementById("newregno").innerHTML=userregno;
+    })
+  }
+
+  function getmaterialdata(){
+    var user=document.getElementById("name").value;
+    firebase.database().ref('User/Amir/'+user).once('value').then(function(snapshort){
+      if(snapshort.val()==null)console.log(snapshort.val());
+      var useradditionalinfo=snapshort.val().additionalinfo;
+      var usercost=snapshort.val().cost;
+      var userdate=snapshort.val().date;
+      var userplace=snapshort.val().palce;
+      
+
+      document.getElementById("newadditionalinfo").innerHTML=useradditionalinfo;
+      document.getElementById("newcost").innerHTML=usercost;
+      document.getElementById("newdate").innerHTML=userdate;
+      document.getElementById("newplace").innerHTML=userplace;
+      
+    })
+  }
+
+  function getdailydata(){
+    var user=document.getElementById("name").value;
+    firebase.database().ref('User/Dailyfoodcost/'+user).once('value').then(function(snapshort){
+      if(snapshort.val()==null)console.log(snapshort.val());
+      var userchefrating=snapshort.val().chefrating;
+      var usercomments=snapshort.val().comments;
+      var usercostofgoods=snapshort.val().costofgoods;
+      var userdate=snapshort.val().date;
+      var usergoods=snapshort.val().goods;
+      var userweightofgoods=snapshort.val().weightofgoods;
+      
+
+      document.getElementById("newchefrating").innerHTML=userchefrating;
+      document.getElementById("newcomments").innerHTML=usercomments;
+      document.getElementById("newcostofgoods").innerHTML=usercostofgoods;
+      document.getElementById("newdate").innerHTML=userdate;
+      document.getElementById("newgoods").innerHTML=usergoods;
+      document.getElementById("newweightofgoods").innerHTML=userweightofgoods;
+      
+    })
+  }
+  
+  function getfeedata(){
+    var user=document.getElementById("name").value;
+    firebase.database().ref('User/Fees/'+user).once('value').then(function(snapshort){
+      if(snapshort.val()==null)console.log(snapshort.val());
+      var userbreakagefee=snapshort.val().breakagefee;
+      var userdailymess=snapshort.val().dailymess;
+      var userregno=snapshort.val().regno;
+      var userspecialmess=snapshort.val().specialmess;
+      
+      
+
+      document.getElementById("brekfee").innerHTML=userbreakagefee;
+      document.getElementById("dailymess").innerHTML=userdailymess;
+      document.getElementById("splmess").innerHTML=userregno;
+      document.getElementById("regno").innerHTML=userspecialmess;
+      
+      
+    })
+  }
 	
 	function signOut() {
     firebase.auth().signOut().then(function() {
@@ -99,12 +192,12 @@
             window.alert("Database updated");
      }    
      else if(a=='3'){
-      firebase.database().ref("User/Dailyfoodcost/").set({
+      var name=document.getElementById('chef').value;
+      firebase.database().ref("User/Dailyfoodcost/"+name).set({
         date:document.getElementById('da').value,
-        chef:document.getElementById('chef').value,
          goods:document.getElementById('goods').value,
          chefrating:document.getElementById('ra').value,
-    cost:document.getElementById('co').value,
+    comments:document.getElementById('co').value,
     weightofgoods:document.getElementById('ck').value,
     costofgoods:document.getElementById('pk').value,
    
@@ -112,7 +205,29 @@
              });
              window.alert("Database updated");
      }
-  }
+     else if(a=='4'){
+      var name=document.getElementById('name').value;
+      firebase.database().ref('User/Fees/'+name).once('value').then(function(snapshort){
+        if(snapshort.exists()){
+          firebase.database().ref("User/Fees/"+name).set({
+            regno:document.getElementById('regno').value,
+             specialmess:parseInt(snapshort.val().specialmess)+parseInt(document.getElementById('spl').value),
+             dailymess:parseInt(snapshort.val().dailymess)+parseInt(document.getElementById('cost').value),
+            breakagefee:parseInt(snapshort.val().breakagefee)+parseInt(document.getElementById('brekfee').value),
+          });window.alert("Newly Updated");
+        }
+        else{
+      firebase.database().ref("User/Fees/"+name).set({
+        regno:document.getElementById('regno').value,
+         specialmess:document.getElementById('spl').value,
+         dailymess:document.getElementById('cost').value,
+    breakagefee:document.getElementById('brekfee').value,
+
+             });
+             window.alert("Database updated");}
+     }
+      )}
+}
       
  
        

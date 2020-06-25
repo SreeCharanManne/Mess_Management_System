@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>FEE CALCULATION</title>
+<title>Student Daily Fee</title>
 <link rel="icon" href="sastra.png" type="image/png" sizes="16x16">
+    <!-- Meta-Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+	<meta name="keywords" content="Exact login Form a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design">
+	
+	<!-- Custom Theme files -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="css1/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css1/font-awesome.css" rel="stylesheet"> <!-- Font-Awesome-Icons-CSS -->
+	
 		<!--w3-->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
 <style type="text/css">
 body {   
 	background: url(images1/bg3.jpg)repeat 0px 0px;
@@ -23,6 +35,7 @@ body {
     background-size: cover;
 	font-family: 'Raleway', sans-serif;
 } 
+
     .form-style-5{
         max-width: 1000px;
         padding: 10px 20px;
@@ -84,16 +97,6 @@ body {
     .form-style-5 select:focus{
         background: #d2d9dd;
     }
-    .form-style-4{
-        max-width: 500px;
-        padding: 10px 20px;
-        background: blue;
-        margin: 10px auto;
-        padding: 20px;
-        background: #f4f7f8;
-        border-radius: 80px;
-        font-family: Georgia, "Times New Roman", Times, serif;
-    }
     .form-style-5 select{
         -webkit-appearance: menulist-button;
         height:35px;
@@ -112,11 +115,11 @@ body {
         border-radius: 15px 15px 15px 0px;
     }
     
-    .form-style-5 input[type="submit"],
+    .form-style-5 input[type="submit"]{
+        background: lightblue;
+    }
     .form-style-5 input[type="button"]
     {
-        
-        
         padding: 10px 10px 10px 10px;
         color: #FFF;
         margin: 0 auto;
@@ -130,6 +133,9 @@ body {
         border-width: 1px 1px 3px;
         margin-bottom: 10px;
     }
+    h1{
+        color:black;
+    }
     .form-style-5 input[type="submit"]:hover,
     .form-style-5 input[type="button"]:hover
     {
@@ -141,57 +147,63 @@ body {
   width: 20%;
   padding: 1px;
 }
-.col{
-    color:black;
-}
     </style></head>
     <body>
         <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
                 <a href="material issue record.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">MATERIAL ISSUE RECORD</a>
                 <a href="daily food cost.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">DAILY FOOD COST</a>
-                <a href="main page.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">LOGOUT</a>
-            </div><br>
-           
-            
-<div class="form-style-5">
-  <div id="myForm">
-    <h2 class="col"><u>FEE CALCULATION</u></h2>
-    <form>
-           <div class="form-style-5">
-           <label>Student Name</label>
-           <input id="name" class="form-control" type="text" required/>
-           </div>
+                <a href="fee.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">FEE CALCULATE</a>
+                <a href="getstudrec.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">GET STUDENT RATINGS</a>
+                <a href="getmaterialrec.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">GET MATERIAL RECORDS</a>
+                <a href="getdailyrecords.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">GET DAILY RECORDS</a>
+               
+                
+        </div><br>  
 
+        <div class="form-style-5">
+            <div><h1><u>STUDENT DAILY FEE</u></h1></div>
+            <div id="myForm">
+                                           
+                                    <div class="form-style-5">
+                                        <label>Enter Student name</label>
+                                        <input id="name"  class="form-style-5" type="text" required=""/>
+                                    </div>
+                                    <div class="form-style-5">
+                                        <label>Enter Student regno</label>
+                                        <input id="regno" class="form-style-5" type="text" required=""/>
+                                        </div>
+                
+                                
+                                <div class="form-style-5">
+                                    <label>Enter food cost for spl mess</label>
+                                    <input id="spl" class="form-style-5" type="text" required=""/>
+                                    </div>
+                                    <div class="form-style-5">
+                                        <label>Enter cost for daily mess</label>
+                                        <input id="cost" class="form-style-5" type="text" required=""/>
+                                        </div>
+                                <div class="form-style-5">
+                                                <label>Enter breakage fee</label>
+                                                <input id="brekfee" class="form-style-5" type="number" min="1" max="5" required=""/>
+                                               
+                                                <button id="check" type="submit" class="form-style-5">Submit choice</button>
+                                            </div>
         
-        <div class="form-style-5">
-           <label>Student Regno</label>
-           <input id="date" class="form-control" type="number" required/>
+                                
+        
+                            </div>
+                    </div>
+                    
+        
+                </div>
+                
+            </div>
            
         </div>
-        <div class="form-style-5">
-           <label>Student Food cost for special mess</label>
-           <input id="place" class="form-control" type="number" required/>
-       
-        </div>
-        <div class="form-style-5">
-           <label>Cost per day of dailymess</label>
-           <input id="cost" class="form-control" type="number" required/>
-           
-        </div>
-           <div class="form-style-5">
-           <label>Breakage fees</label>
-           <input id="cost" class="form-control" type="number" required/>
-        </div>
- 
-
-        <button id="checka" type="submit" class="form-style-5">Submit choice</button>
-
-    </form>
-  </div>
-</div>
-    <script src="js/index.js"></script>
+            </div>
+<script src="js/index.js"></script>
     <script>
-        document.getElementById("checka").onclick = function() {
+        document.getElementById("check").onclick = function() {
   let allAreFilled = true;
   document.getElementById("myForm").querySelectorAll("[required]").forEach(function(i) {
     if (!allAreFilled) return;
@@ -202,16 +214,16 @@ body {
         if (r.checked) radioValueCheck = true;
       })
       allAreFilled = radioValueCheck;
-      console.log("hey man");
     }
   })
   if (!allAreFilled) {
     alert('Fill all the fields');}
   else{
-      writemir();
+    writeinto(4);
     }
   
 };
     </script>
 </body>
 </html>
+

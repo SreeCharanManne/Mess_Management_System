@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>SASTRA ADMIN RECORDS</title>
+<title>Get Daily Food Records</title>
 <link rel="icon" href="sastra.png" type="image/png" sizes="16x16">
 		<!--w3-->
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -16,7 +16,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
 <style type="text/css">
 body {   
-	background: url(images1/bg3.jpg)repeat 0px 0px;
+	
     background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -155,103 +155,25 @@ body {
                 <a href="getdailyrecords.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">GET DAILY RECORDS</a>
                
             </div><br>
-            <div class="form-style-4">
-                <marquee scrollamount="10"><h2>WELCOME ADMIN!!</h2></marquee>
-            
-        </div>
-            
-        <div class="form-style-5">
-            <div id="myForm">
-                <center><h1 class="form-style-5"><u>MATERIAL ISSUE RECORD</u></h1>  </center>
-                                          
-                                    <div class="form-style-5">
-                                        <label>Enter Material Name</label>
-                                        <input id="name"  class="form-style-5" type="text" required=""/>
-                                    </div>
-                                    <div class="form-style-5">
-                                        <label>Enter Material Id</label>
-                                        <input id="da" class="form-style-5" type="text" required=""/>
-                                        </div>
-                                        <div class="form-style-5">
-                                                <label>Material used in which time</label>
-                                                <select id="pl" class="form-style-5">
-                                                    <option>Breakfast</option>
-                                                    <option>Lunch</option>
-                                                    <option>Evening Snacks</option>
-                                                    <option>Dinner</option>
-                                                    
-                                                </select>
-                                            </div>
-                                <hr>
-                                <div class="form-style-5">
-                                    <label>Enter date</label>
-                                    <input id="dat" class="form-style-5" type="text" required=""/>
-                                    </div>
-                                 <div class="form-style-5">
-                                                <label>Select day of week</label>
-                                                 <select id="co" class="form-style-5">
-                                                <option>Monday</option>
-                                                 <option>Tueday</option>
-                                                  <option>Wednesday</option>
-                                                   <option>Thursday</option>
-                                                    <option>Friday</option>
-                                                     <option>Saturday</option>
-                                                      <option>Sunday</option>
-                                                       </select>
-                                            </div>
-                                <hr>
-                                <div class="form-style-5">
-                                                <label>Enter material weight</label>
-                                                <input id="imp" class="form-style-5" type="number"required=""/>
-                                               
-                                            </div>
-                                
-        
-                                <hr>
-                                <div class="form-style-5">
-                                    <label>Enter material cost</label>
-                                    <input id="imp" class="form-style-5" type="number"required=""/>
-                                </div>
-                                
-                                <center>
-                                <button id="check" type="submit" class="form-style-5">Submit choice</button><br><br>
-                                <a href="main page.html">LOGOUT</a>
-                            </center>
-                                </div>
-        
-                            </div>
-                    </div>
-                    
-        
-                </div>
-                
-            </div>
            
-        </div>
+            
+            <div class="form-style-5">
+                    <center><h1 class="form-style-5"><u>GET FEES DATA</u></h1>  </center>
+                                              
+                                        <div class="form-style-5">
+                                            <label>Enter Student Name</label>
+                                            <input id="name"  class="form-style-5" type="text" required=""/>
+                                            <button type="button" onclick=getfeedata()>Get data</button>
+                                        </div>
+                                        <div>
+                                            <p>Breakage fee:<strong id="brekfee"></strong></p>
+                                            <p>Dailymess:<strong id="dailymess"></strong></p>
+                                            <p>Special mess:<strong id="splmess"></strong></p>
+                                            <p>Regno:<strong id="regno"></strong></p>
+                                            
+                                            
+                                        </div>
             </div>
-    <script src="js/index.js"></script>
-    <script>
-        document.getElementById("check").onclick = function() {
-  let allAreFilled = true;
-  document.getElementById("myForm").querySelectorAll("[required]").forEach(function(i) {
-    if (!allAreFilled) return;
-    if (!i.value) allAreFilled = false;
-    if (i.type === "radio") {
-      let radioValueCheck = false;
-      document.getElementById("myForm").querySelectorAll(`[name=${i.name}]`).forEach(function(r) {
-        if (r.checked) radioValueCheck = true;
-      })
-      allAreFilled = radioValueCheck;
-    }
-  })
-  if (!allAreFilled) {
-    alert('Fill all the fields');}
-  else{
-    writeinto(1);
-    }
-  
-};
-    </script>
+            <script src="js/index.js"></script>                               
 </body>
 </html>
-
