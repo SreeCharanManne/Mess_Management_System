@@ -9,8 +9,128 @@
   };
   
   firebase.initializeApp(firebaseConfig);
+  firebase.auth.Auth.Persistence.LOCAL;
+  database=firebase.database();
+  var ref=database.ref('User/Amir/');
+  function getallmaterialdata(){
+    ref.on('value',gotdata);
+  }
+  
+  function gotdata(data){
+  var scores=data.val();
+  var keys=Object.keys(scores);
+  //console.log(keys);
+  document.getElementById("scorelist").innerHTML=" <span class='month'><h1>Material Records</h1></span> <br>"
+  for(var i=0;i<keys.length;i++){
+    var k=keys[i];
+    var cost=scores[k].cost;
+    var date=scores[k].date;
+    var day=scores[k].day;
+    var materialid=scores[k].materialid;
+    var time_of_material_use=scores[k].time_of_material_use;
+    //console.log(cost,date,day,materialid,time_of_material_use);
+    var li=["Material Name : "+k+" ",
+    "<br>"+"Cost :"+cost+" ",
+    "<br>"+"Date :"+date+" ",
+    "<br>"+"Day :"+day+" ",
+    "<br>"+"Material ID :"+materialid+" ",
+    "<br>"+"Time of Usage :"+time_of_material_use+"<br> "];
+    document.getElementById("scorelist").innerHTML+=li+"<br>";
+    
+  }
+  }
+var reff=database.ref('User/Fees/');
+  function getallfeedata(){
+    reff.on('value',gotfee);
+  }
 
+  function gotfee(data){
+    var scores=data.val();
+  var keys=Object.keys(scores);
+  //console.log(keys);
+  document.getElementById("feedata").innerHTML="<span class='month'><h1>Student Fee Records</h1></span>"
+  for(var i=0;i<keys.length;i++){
+    var k=keys[i];
+    var breakfee=scores[k].breakagefee;
+    var dailymess=scores[k].dailymess;
+    var regno=scores[k].regno;
+    var specialmess=scores[k].specialmess;
+    var li=["Student Name : "+k+" ",
+    "<br>"+"Breakage Fee :"+breakfee+" ",
+    "<br>"+"Daily mess :"+dailymess ,
+    "<br>"+"Registration Number :"+regno+" ",
+    "<br>"+"Special Mess:"+specialmess+"<br> "];
+    document.getElementById("feedata").innerHTML+=li+"<br>";
+    
+  }
+  }
+function collapse(){
+  document.getElementById("feedata").innerHTML="";
+}
+function collapserat(){
+  document.getElementById("rating").innerHTML="";
+}
+function collapsemat(){
+  document.getElementById("scorelist").innerHTML="";
+}
+function collapsefcd(){
+  document.getElementById("dailydata").innerHTML="";
+}
+  var refff=database.ref('User/Dailyfoodcost/');
+  function getdailyfoodcostdata(){
+    refff.on('value',gotdailyfood);
+  }
 
+  function gotdailyfood(data){
+    var scores=data.val();
+  var keys=Object.keys(scores);
+  //console.log(keys);
+  document.getElementById("dailydata").innerHTML="<span class='month'><h1>Daily Food Cost Records</h1></span>"
+  for(var i=0;i<keys.length;i++){
+    var k=keys[i];
+    var chefrating=scores[k].chefrating;
+    var comments=scores[k].comments;
+    var costofgoods=scores[k].costofgoods;
+    var date=scores[k].date;
+    var goods=scores[k].goods;
+    var weight=scores[k].weightofgoods;
+    var li=["Chef Name : "+k+" ",
+    "<br>"+"Chef Rating:"+chefrating+" ",
+    "<br>"+"Comments :"+comments,
+    "<br>"+"Cost of Goods :"+costofgoods+" ",
+    "<br>"+"Date:"+date+" ",
+    "<br>"+"Goods:"+goods+" ",
+    "<br>"+"Weight:"+weight+"<br> "];
+    document.getElementById("dailydata").innerHTML+=li+"<br>";
+    
+  }
+  }
+  var reff=database.ref('User/Ratings/');
+  function getrating(){
+    reff.on('value',gotrating);
+  }
+  function gotrating(data){
+    var scores=data.val();
+  var keys=Object.keys(scores);
+  //console.log(keys);
+  document.getElementById("rating").innerHTML="<span class='month'><h1>Student Ratings</h1></span>"
+  for(var i=0;i<keys.length;i++){
+    var k=keys[i];
+    var additionalinfo=scores[k].additionalinfo;
+    var day=scores[k].day;
+    var meal=scores[k].meal;
+    var rating=scores[k].rating;
+    var regno=scores[k].regno;
+    var li=["Student Name : "+k+" ",
+    "<br>"+"AdditionalInfo:"+additionalinfo+" ",
+    "<br>"+"Day :"+day,
+    "<br>"+"Meal :"+meal+" ",
+    "<br>"+"Rating:"+rating+" ",
+    "<br>"+"Regno :"+regno+"<br> "];
+    document.getElementById("rating").innerHTML+=li+"<br>";
+  }}
+ 
+  
 	function signIn(){
 		
     var email = document.getElementById('email').value;
@@ -122,6 +242,7 @@
       
     })
   }
+  
 	
 	function signOut() {
     firebase.auth().signOut().then(function() {
