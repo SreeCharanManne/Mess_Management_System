@@ -46,7 +46,7 @@
   function getdata(){
     var user=document.getElementById("name").value;
     firebase.database().ref('User/Ratings/'+user).once('value').then(function(snapshort){
-      if(snapshort.val()==null)console.log(snapshort.val());
+      if(snapshort.val()==null)window.alert("Wrong Entry!!");
       var useradditionalinfo=snapshort.val().additionalinfo;
       var userday=snapshort.val().day;
       var usermeal=snapshort.val().meal;
@@ -64,17 +64,19 @@
   function getmaterialdata(){
     var user=document.getElementById("name").value;
     firebase.database().ref('User/Amir/'+user).once('value').then(function(snapshort){
-      if(snapshort.val()==null)console.log(snapshort.val());
-      var useradditionalinfo=snapshort.val().additionalinfo;
+      if(snapshort.val()==null)window.alert("Wrong Entry!!");
       var usercost=snapshort.val().cost;
       var userdate=snapshort.val().date;
-      var userplace=snapshort.val().palce;
+      var userday=snapshort.val().day;
+      var usermaterialid=snapshort.val().materialid;
+      var usertime=snapshort.val().time_of_material_use;
       
 
-      document.getElementById("newadditionalinfo").innerHTML=useradditionalinfo;
       document.getElementById("newcost").innerHTML=usercost;
       document.getElementById("newdate").innerHTML=userdate;
-      document.getElementById("newplace").innerHTML=userplace;
+      document.getElementById("newday").innerHTML=userday;
+      document.getElementById("newmaterialid").innerHTML=usermaterialid;
+      document.getElementById("newtime").innerHTML=usertime;
       
     })
   }
@@ -82,7 +84,7 @@
   function getdailydata(){
     var user=document.getElementById("name").value;
     firebase.database().ref('User/Dailyfoodcost/'+user).once('value').then(function(snapshort){
-      if(snapshort.val()==null)console.log(snapshort.val());
+      if(snapshort.val()==null)window.alert("Wrong Entry!!");
       var userchefrating=snapshort.val().chefrating;
       var usercomments=snapshort.val().comments;
       var usercostofgoods=snapshort.val().costofgoods;
@@ -104,7 +106,7 @@
   function getfeedata(){
     var user=document.getElementById("name").value;
     firebase.database().ref('User/Fees/'+user).once('value').then(function(snapshort){
-      if(snapshort.val()==null)console.log(snapshort.val());
+      if(snapshort.val()==null)window.alert("Wrong Entry!!");
       var userbreakagefee=snapshort.val().breakagefee;
       var userdailymess=snapshort.val().dailymess;
       var userregno=snapshort.val().regno;
@@ -114,8 +116,8 @@
 
       document.getElementById("brekfee").innerHTML=userbreakagefee;
       document.getElementById("dailymess").innerHTML=userdailymess;
-      document.getElementById("splmess").innerHTML=userregno;
-      document.getElementById("regno").innerHTML=userspecialmess;
+      document.getElementById("splmess").innerHTML=userspecialmess;
+      document.getElementById("regno").innerHTML=userregno;
       
       
     })
