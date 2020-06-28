@@ -31,11 +31,11 @@
     //console.log(cost,date,day,materialid,time_of_material_use);
     var li=["Material Name : "+k[0].toUpperCase() +  
     k.slice(1)+" ",
-    "<br>"+"Cost :"+cost+" ",
-    "<br>"+"Date :"+date+" ",
-    "<br>"+"Day :"+day+" ",
-    "<br>"+"Material ID :"+materialid+" ",
-    "<br>"+"Time of Usage :"+time_of_material_use+"<br> "];
+    "<br>"+"Cost : "+cost+" ",
+    "<br>"+"Date : "+date+" ",
+    "<br>"+"Day : "+day+" ",
+    "<br>"+"Material ID : "+materialid+" ",
+    "<br>"+"Time of Usage : "+time_of_material_use+"<br> "];
     document.getElementById("scorelist").innerHTML+=li+"<br>";
     
   }
@@ -58,10 +58,10 @@ var reff=database.ref('User/Fees/');
     var specialmess=scores[k].specialmess;
     var li=["Student Name : "+k[0].toUpperCase() +  
     k.slice(1)+" ",
-    "<br>"+"Breakage Fee :"+breakfee+" ",
-    "<br>"+"Daily mess :"+dailymess ,
-    "<br>"+"Registration Number :"+regno+" ",
-    "<br>"+"Special Mess:"+specialmess+"<br> "];
+    "<br>"+"Breakage Fee : "+breakfee+" ",
+    "<br>"+"Daily mess : "+dailymess ,
+    "<br>"+"Registration Number : "+regno+" ",
+    "<br>"+"Special Mess: "+specialmess+"<br> "];
     document.getElementById("feedata").innerHTML+=li+"<br>";
     
   }
@@ -98,12 +98,12 @@ function collapsefcd(){
     var weight=scores[k].weightofgoods;
     var li=["Chef Name : "+k[0].toUpperCase() +  
     k.slice(1)+" ",
-    "<br>"+"Chef Rating:"+chefrating+" ",
-    "<br>"+"Comments :"+comments,
-    "<br>"+"Cost of Goods :"+costofgoods+" ",
-    "<br>"+"Date:"+date+" ",
-    "<br>"+"Goods:"+goods+" ",
-    "<br>"+"Weight:"+weight+"<br> "];
+    "<br>"+"Chef Rating : "+chefrating+" ",
+    "<br>"+"Comments : "+comments,
+    "<br>"+"Cost of Goods : "+costofgoods+" ",
+    "<br>"+"Date: "+date+" ",
+    "<br>"+"Goods: " +goods+" ",
+    "<br>"+"Weight: "+weight+"<br> "];
     document.getElementById("dailydata").innerHTML+=li+"<br>";
     
   }
@@ -126,11 +126,11 @@ function collapsefcd(){
     var regno=scores[k].regno;
     var li=["Student Name : "+k[0].toUpperCase() +  
     k.slice(1)+" ",
-    "<br>"+"AdditionalInfo:"+additionalinfo+" ",
-    "<br>"+"Day :"+day,
-    "<br>"+"Meal :"+meal+" ",
-    "<br>"+"Rating:"+rating+" ",
-    "<br>"+"Regno :"+regno+"<br> "];
+    "<br>"+"AdditionalInfo : "+additionalinfo+" ",
+    "<br>"+"Day : "+day,
+    "<br>"+"Meal : "+meal+" ",
+    "<br>"+"Rating : "+rating+" ",
+    "<br>"+"Regno : "+regno+"<br> "];
     document.getElementById("rating").innerHTML+=li+"<br>";
   }}
  
