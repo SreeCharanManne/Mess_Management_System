@@ -151,16 +151,22 @@ function collapsefcd(){
 		
     var email = document.getElementById('email').value;
     var password = document.getElementById('password').value;
-    firebase.auth().signInWithEmailAndPassword(email, password)
-      .then(function() {
-        alert('User signed in!');
-        window.location="material issue record.html";
-      }) 
-      .catch(function(error) {
+    // firebase.auth().signInWithEmailAndPassword(email, password)
+    //   .then(function() {
+    //     alert('User signed in!');
+    //     window.location="material issue record.html";
+    //   }) 
+    //   .catch(function(error) {
         
-          alert('Please check your credentials!!')
+    //       alert('Please check your credentials!!')
           
-      });
+    //   });
+    if(email=="messadmin@sastra.ac.in" &&  password=="sastra123"){
+      window.location="material issue record.html";
+    }
+    else{
+      alert('Please check your credentials!!');
+    }
 	}
   
   function getdata(){
