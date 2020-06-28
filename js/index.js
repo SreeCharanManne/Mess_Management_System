@@ -29,7 +29,8 @@
     var materialid=scores[k].materialid;
     var time_of_material_use=scores[k].time_of_material_use;
     //console.log(cost,date,day,materialid,time_of_material_use);
-    var li=["Material Name : "+k+" ",
+    var li=["Material Name : "+k[0].toUpperCase() +  
+    k.slice(1)+" ",
     "<br>"+"Cost :"+cost+" ",
     "<br>"+"Date :"+date+" ",
     "<br>"+"Day :"+day+" ",
@@ -55,7 +56,8 @@ var reff=database.ref('User/Fees/');
     var dailymess=scores[k].dailymess;
     var regno=scores[k].regno;
     var specialmess=scores[k].specialmess;
-    var li=["Student Name : "+k+" ",
+    var li=["Student Name : "+k[0].toUpperCase() +  
+    k.slice(1)+" ",
     "<br>"+"Breakage Fee :"+breakfee+" ",
     "<br>"+"Daily mess :"+dailymess ,
     "<br>"+"Registration Number :"+regno+" ",
@@ -94,7 +96,8 @@ function collapsefcd(){
     var date=scores[k].date;
     var goods=scores[k].goods;
     var weight=scores[k].weightofgoods;
-    var li=["Chef Name : "+k+" ",
+    var li=["Chef Name : "+k[0].toUpperCase() +  
+    k.slice(1)+" ",
     "<br>"+"Chef Rating:"+chefrating+" ",
     "<br>"+"Comments :"+comments,
     "<br>"+"Cost of Goods :"+costofgoods+" ",
@@ -121,7 +124,8 @@ function collapsefcd(){
     var meal=scores[k].meal;
     var rating=scores[k].rating;
     var regno=scores[k].regno;
-    var li=["Student Name : "+k+" ",
+    var li=["Student Name : "+k[0].toUpperCase() +  
+    k.slice(1)+" ",
     "<br>"+"AdditionalInfo:"+additionalinfo+" ",
     "<br>"+"Day :"+day,
     "<br>"+"Meal :"+meal+" ",
